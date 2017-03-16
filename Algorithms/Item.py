@@ -54,9 +54,6 @@ algo = KNNBasic(sim_options = {'name':'MSD','user_based': False })
 
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-
-
-
 pt(perf)
 
 with open('Item.csv','w') as fo:
