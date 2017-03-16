@@ -9,14 +9,44 @@ import os
 
 #load data from a file
 file_path = os.path.expanduser('restaurant_ratings.txt')
-reader = Reader(line_format='user item rating timestamp', sep='\t', skip_lines=99990)
+reader = Reader(line_format='user item rating timestamp', sep='\t')
 # print(reader)
-data = Dataset.load_from_file(file_path, reader=reader)
-data.folds()
 
-# print(data)
+train_files = os.path.expanduser('train.txt')
+test_files = os.path.expanduser('test.txt')
+data = Dataset.load_from_file(train_files, reader=reader)
+
+
+
+
+
+
+# path to dataset folder
+# train_files = os.path.expanduser('train.txt')
+# test_files = os.path.expanduser('test.txt')
+
+# This time, we'll use the built-in reader.
+# reader = Reader('ml-100k')
+
+# folds_files is a list of tuples containing file paths:
+# [(u1.base, u1.test), (u2.base, u2.test), ... (u5.base, u5.test)]
+train_file = train_files
+test_file = test_files
+folds_files=[]
+for i in range(1,5):
+    folds_files.append((train_file , test_file))
+# folds_files = [(train_file i, test_file % i) for i in (1, 2, 3, 4, 5)]
+
+data = Dataset.load_from_folds(folds_files, reader=reader)
+
+
+
+
+
+
+print(data)
 #splitting data into 3 folds
-data.split(shuffle=False)
+# data.split(n_folds=2)
 
 
 #SVD Algorithm
