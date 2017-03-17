@@ -43,8 +43,11 @@ algo = SVD()
 
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-pt(perf)
-
+# print()
+def printSVD():
+    pt(perf)
+printSVD()
+# print()
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
 
 with open('SVD.csv','w') as fo:

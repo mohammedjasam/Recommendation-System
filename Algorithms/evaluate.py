@@ -56,9 +56,9 @@ def evaluate(algo, data, measures=['rmse', 'mae'], with_dump=False,
 
     for fold_i, (trainset, testset) in enumerate(data.folds()):
 
-        if verbose:
-            print('-' * 12)
-            print('Fold ' + str(fold_i + 1))
+        # if verbose:
+        #     print('-' * 12)
+        #     # print('Fold ' + str(fold_i + 1))
 
         # train and test algorithm. Keep all rating predictions in a list
         algo.train(trainset)
@@ -84,14 +84,14 @@ def evaluate(algo, data, measures=['rmse', 'mae'], with_dump=False,
 
             dump(file_name, predictions, trainset, algo)
 
-    if verbose:
-        print('-' * 12)
-        print('-' * 12)
-        for measure in measures:
-            print('Mean {0:4s}: {1:1.4f}'.format(
-                  measure.upper(), np.mean(performances[measure])))
-        print('-' * 12)
-        print('-' * 12)
+    # if verbose:
+    #     print('-' * 12)
+    #     print('-' * 12)
+    #     for measure in measures:
+    #         print('Mean {0:4s}: {1:1.4f}'.format(
+    #               measure.upper(), np.mean(performances[measure])))
+    #     print('-' * 12)
+    #     print('-' * 12)
 
     return performances
 
@@ -259,5 +259,5 @@ def print_perf(performances,fo):
         *['{:1.4f}'.format(v) for v in vals] +
         ['{:1.4f}'.format(np.mean(vals))])
         for (key, vals) in iteritems(performances))
-	
+
     print(s,file=fo)

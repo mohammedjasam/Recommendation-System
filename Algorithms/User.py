@@ -53,8 +53,10 @@ algo = KNNBasic(sim_options = {'user_based': True})
 
 
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-pt(perf)
-
+def printUser():
+    print()
+    pt(perf)
+printUser()
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
 
 with open('User.csv','w') as fo:

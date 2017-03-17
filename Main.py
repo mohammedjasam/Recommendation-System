@@ -1,13 +1,56 @@
-import os  # We need this module
-import subprocess
 ### Scripted by Mohammed Jasam
 ### mnqnd@mst.edu
 
-##########---Generates Fold Performance of the Algorithms!!!---###########
+
 import csv
+import os
+import subprocess
+
+import numpy as np
+import matplotlib.pyplot as plt
 
 l=[]
-# i=0
+viz=[]
+
+
+
+########################################## VISUALIZATION ##########################################
+def Viz(l):
+    a=l[0]
+    b=l[1]
+
+    # data to plot
+    n_groups = 4
+    # create plot
+
+    objects = ("Fold 1","Fold 2","Fold 3","Fold Mean")#(1,2,3,4)
+    y_pos = np.arange(len(objects))
+    fig, ax = plt.subplots()
+    # index = np.arange(n_groups)
+    bar_width = 0.3
+    opacity = 0.8
+
+    rects1 = plt.bar(y_pos, a, bar_width,
+                     alpha=opacity,
+                     color='b',
+                     label='RMSE')
+    rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                     alpha=opacity,
+                     color='g',
+                     label='MAE')
+
+    plt.xlabel('Folds')
+    plt.ylabel('Accuracy')
+    plt.title('RMSE and MAE Values on different folds')
+    plt.xticks(y_pos + bar_width, ("Fold 1","Fold 2","Fold 3","Fold Mean"))
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+##########################################################################################################################
+
+
+##########---Generates Fold Performance of the Algorithms!!!---###########
+#Code which is used to extract Folds!
 def extract(filename,query):
     with open(filename, "r") as fp_in:
         reader = csv.reader(fp_in, delimiter="\t")
@@ -19,7 +62,7 @@ def extract(filename,query):
     xa=[]
     for i in range(len(l)):
         xa.append([float(x) for x in l[i]])
-    print(xa)
+    Viz(xa)
 
     if query=='f1':
         RMSE=0.0
@@ -70,7 +113,7 @@ def extract(filename,query):
         RMSE=0.0
         MAE=0.0
         print("\nMean of 3-Fold values")
-        print("=================")
+        print("=====================")
         for x in range(len(xa)):
             if x==0:
                 print("RMSE "+str(xa[x][3]))
@@ -80,37 +123,111 @@ def extract(filename,query):
                 MAE=xa[x][3]
         del l[:]
         return RMSE, MAE
+    # viz=xa
+    print(xa)
+    return(viz)
 
 
 
-### Call the function name!!! ###
+        ### Call the function name!!! ###
 ### The function returns RMSE and MAE Values!! ###
+## To print, pass f1,f2,f3 or fmean below for respective FOLD values ###
+
+FoldList=[]
+'''-------------------------------------------------------------------------------------------------------'''
+print("                    Calculating RMSE and MAE of SVD Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python SVD.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-a,b=extract("SVD.csv",'f1')
+SVD_a,SVD_b=extract("SVD.csv",'fmean')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+print()
+# FoldList.append([a,b])
+'''-------------------------------------------------------------------------------------------------------'''
 
+
+'''-------------------------------------------------------------------------------------------------------'''
+print("                    Calculating RMSE and MAE of PMF Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python PMF.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-a,b=extract("PMF.csv",'fmean')
+PMF_a,PMF_b=extract("PMF.csv",'fmean')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+print()
+# FoldList.append([a,b])
+'''-------------------------------------------------------------------------------------------------------'''
 
+
+'''-------------------------------------------------------------------------------------------------------'''
+print("                    Calculating RMSE and MAE of NMF Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python NMF.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-a,b=extract("NMF.csv",'f1')
-#
+NMF_a,NMF_b=extract("NMF.csv",'fmean')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+print()
+# FoldList.append([a,b])
+'''-------------------------------------------------------------------------------------------------------'''
+
+
+'''-------------------------------------------------------------------------------------------------------'''
+print("                    Calculating RMSE and MAE of User Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python User.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-a,b=extract("User.csv",'fmean')
-# #
+User_a,User_b=extract("User.csv",'fmean')   ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+print()
+# FoldList.append([a,b])
+'''-------------------------------------------------------------------------------------------------------'''
+
+
+'''-------------------------------------------------------------------------------------------------------'''
+print("                    Calculating RMSE and MAE of Item Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python Item.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-a,b=extract("User.csv",'fmean')
+Item_a,Item_b=extract("User.csv",'fmean')   ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+print()
+# FoldList.append([a,b])
+'''-------------------------------------------------------------------------------------------------------'''
+
+FoldList.append([SVD_a,PMF_a,NMF_a,User_a,Item_a])
+FoldList.append([SVD_b,PMF_b,NMF_b,User_b,Item_b])
+
+
+print(FoldList)
+def VizCompare(FL):
+    a,b=FL[0],FL[1]
+    # data to plot
+    n_groups = 4
+    # create plot
+
+    objects = ("a","b",'c','d','e')#(1,2,3,4)
+    y_pos = np.arange(len(objects))
+    fig, ax = plt.subplots()
+    # index = np.arange(n_groups)
+    bar_width = 0.3
+    opacity = 0.8
+
+    rects1 = plt.bar(y_pos, a, bar_width,
+                     alpha=opacity,
+                     color='b',
+                     label='RMSE')
+    rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                     alpha=opacity,
+                     color='g',
+                     label='MAE')
+
+    plt.xlabel('Algorithms')
+    plt.ylabel('Value of RMSE & MAE')
+    plt.title('Comparing RMSE and MAE for different Algorithms on Fold 1')
+    plt.xticks(y_pos + bar_width, ("SVD","PMF","NMF","User","Item"))
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+# print(FoldList)
+VizCompare(FoldList)
+
+# print(viz)

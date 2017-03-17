@@ -45,7 +45,9 @@ algo = NMF()
 
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-pt(perf)
+def printNMF():
+    pt(perf)
+printNMF()
 
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
 

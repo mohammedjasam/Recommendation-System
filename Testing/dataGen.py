@@ -76,5 +76,5 @@ def fmean():
 
 ### Call the function name!!! ###
 ### The function returns RMSE and MAE Values!! ###
-a,b=f1( )
+a,b=f( )
 print(a,b)
