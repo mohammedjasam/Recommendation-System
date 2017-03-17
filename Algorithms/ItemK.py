@@ -41,9 +41,9 @@ data.folds()
 data.split(n_folds=3, shuffle=False)
 
 #Item based Collaborative Filtering algorithm.
-algo = KNNBasic(sim_options = {'user_based': False})
+# algo = KNNBasic(sim_options = {'user_based': False})
 #Using the value of K
-# algo = KNNBasic(k=20, sim_options = {'name':'MSD', 'user_based': True })
+algo = KNNBasic(k=20, sim_options = {'name':'MSD', 'user_based': True })
 
 #To used MSD in Item Based Algorithm
 # algo = KNNBasic(sim_options = {'name':'MSD','user_based': False })
@@ -60,7 +60,7 @@ def printItem():
 printItem()
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
 
-with open('Item.csv','w') as fo:
+with open('ItemK.csv','w') as fo:
     print_perf(perf,fo)
 
 #Visualization

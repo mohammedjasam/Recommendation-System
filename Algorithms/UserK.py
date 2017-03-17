@@ -29,38 +29,35 @@ def pt(performances):
         for (key, vals) in iteritems(performances))
     print(s)
 
-
 #load data from a file
 file_path = os.path.expanduser('restaurant_ratings.txt')
 reader = Reader(line_format='user item rating timestamp', sep='\t', skip_lines=99900)
-# print(reader)
 data = Dataset.load_from_file(file_path, reader=reader)
 data.folds()
 
 #Splitting data into 3 folds
 data.split(n_folds=3, shuffle=False)
 
-#Item based Collaborative Filtering algorithm.
-algo = KNNBasic(sim_options = {'user_based': False})
+
+#User Based Collaborative Filtering Algorithm
+# algo = KNNBasic(sim_options = {'user_based': True})
 #Using the value of K
-# algo = KNNBasic(k=20, sim_options = {'name':'MSD', 'user_based': True })
+algo = KNNBasic(k=20, sim_options = {'name':'MSD', 'user_based': True })
 
-#To used MSD in Item Based Algorithm
-# algo = KNNBasic(sim_options = {'name':'MSD','user_based': False })
-#To used Cosine in Item Based Algorithm
-#algo = KNNBasic(sim_options = {'name':'cosine','user_based': False })
-#To used Pearson in Item Based Algorithm
-#algo = KNNBasic(sim_options = {'name':'pearson','user_based': False })
+#To use MSD in User Based Algorithm
+# algo = KNNBasic(sim_options = {'name':’MSD’,'user_based': True })
+#To use Cosine in User Based Algorithm
+#algo = KNNBasic(sim_options = {'name':’cosine’,'user_based': True })
+#To use Pearson in User Based Algorithm
+#algo = KNNBasic(sim_options = {'name':’pearson’,'user_based': True })
 
-#Printing the result
+
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-def printItem():
+def printUser():
     print()
     pt(perf)
-printItem()
+printUser()
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
 
-with open('Item.csv','w') as fo:
+with open('UserK.csv','w') as fo:
     print_perf(perf,fo)
-
-#Visualization
