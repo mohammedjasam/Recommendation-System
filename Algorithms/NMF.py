@@ -33,7 +33,7 @@ def pt(performances):
 
 #load data from a file
 file_path = os.path.expanduser('restaurant_ratings.txt')
-reader = Reader(line_format='user item rating timestamp', sep='\t', skip_lines=0)
+reader = Reader(line_format='user item rating timestamp', sep='\t', skip_lines=99900)
 data = Dataset.load_from_file(file_path, reader=reader)
 data.folds()
 
@@ -46,6 +46,8 @@ algo = NMF()
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
 pt(perf)
+
+os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
 
 with open('NMF.csv','w') as fo:
     print_perf(perf,fo)

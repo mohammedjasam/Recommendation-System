@@ -5,6 +5,8 @@
 import csv
 
 l=[]
+def extract(filename)
+    f=filename
 with open("Item.csv", "r") as fp_in:
     reader = csv.reader(fp_in, delimiter="\t")
     header = next(reader)
@@ -70,5 +72,9 @@ def fmean():
             MAE=xa[x][0]
     return RMSE, MAE
 
+
+
+### Call the function name!!! ###
+### The function returns RMSE and MAE Values!! ###
 a,b=f1( )
 print(a,b)

@@ -56,6 +56,8 @@ algo = KNNBasic(sim_options = {'name':'MSD','user_based': False })
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
 pt(perf)
 
+os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+
 with open('Item.csv','w') as fo:
     print_perf(perf,fo)
 
