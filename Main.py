@@ -82,37 +82,91 @@ def VizCompare(FL,v):
     bar_width = 0.3
     opacity = 0.8
 
-    #Bars
-    rects1 = plt.bar(y_pos, a, bar_width,
-                     alpha=opacity,
-                     color='b',
-                     label='RMSE')
-    rects3 = plt.bar(y_pos + bar_width, b, bar_width,
-                     alpha=opacity,
-                     color='g',
-                     label='MAE')
+    # #Bars
+    # rects1 = plt.bar(y_pos, a, bar_width,
+    #                  alpha=opacity,
+    #                  color='b',
+    #                  label='RMSE')
+    # rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+    #                  alpha=opacity,
+    #                  color='g',
+    #                  label='MAE')
 
     #Plot Properties
     plt.xlabel('Algorithms')
     plt.ylabel('Value of RMSE & MAE')
     if v=='f1':
+        #Bars
+        rects1 = plt.bar(y_pos, a, bar_width,
+                         alpha=opacity,
+                         color='b',
+                         label='RMSE')
+        rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                         alpha=opacity,
+                         color='g',
+                         label='MAE')
         plt.title('RMSE and MAE Values of Various Algorithms on Fold 1')
         plt.xticks(y_pos + bar_width, ("SVD","PMF","NMF","User","Item"))
     elif v=='f2':
+        #Bars
+        rects1 = plt.bar(y_pos, a, bar_width,
+                         alpha=opacity,
+                         color='b',
+                         label='RMSE')
+        rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                         alpha=opacity,
+                         color='g',
+                         label='MAE')
         plt.title('RMSE and MAE Values of Various Algorithms on Fold 2')
         plt.xticks(y_pos + bar_width, ("SVD","PMF","NMF","User","Item"))
     elif v=='f3':
+        #Bars
+        rects1 = plt.bar(y_pos, a, bar_width,
+                         alpha=opacity,
+                         color='b',
+                         label='RMSE')
+        rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                         alpha=opacity,
+                         color='g',
+                         label='MAE')
         plt.title('RMSE and MAE Values of Various Algorithms on Fold 3')
         plt.xticks(y_pos + bar_width, ("SVD","PMF","NMF","User","Item"))
     elif v=='fmean':
+        #Bars
+        rects1 = plt.bar(y_pos, a, bar_width,
+                         alpha=opacity,
+                         color='b',
+                         label='RMSE')
+        rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                         alpha=opacity,
+                         color='g',
+                         label='MAE')
         plt.title('RMSE and MAE Values of Various Algorithms on Mean of 3-Fold')
         plt.xticks(y_pos + bar_width, ("SVD","PMF","NMF","User","Item"))
-    elif v=='User':
-        plt.title('RMSE and MAE Values of Various Algorithms on Various Similarities')
-        plt.xticks(y_pos + bar_width, ("User","UserMSD","UserCosine","UserPearson","UserK"))
-    elif v=='Item':
-        plt.title('RMSE and MAE Values of Item Algorithm on Various Similarities')
-        plt.xticks(y_pos + bar_width, ("Item","ItemMSD","ItemCosine","ItemPearson","ItemK"))
+    elif v=='RMSE':
+        #Bars
+        rects1 = plt.bar(y_pos, a, bar_width,
+                         alpha=opacity,
+                         color='b',
+                         label='User')
+        rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                         alpha=opacity,
+                         color='g',
+                         label='IItem')
+        plt.title('RMSE Values of User & Item Algorithm on Various Similarities')
+        plt.xticks(y_pos + bar_width, ("General","MSD","Cosine","Pearson","K"))
+    elif v=='MAE':
+        #Bars
+        rects1 = plt.bar(y_pos, a, bar_width,
+                         alpha=opacity,
+                         color='b',
+                         label='User')
+        rects3 = plt.bar(y_pos + bar_width, b, bar_width,
+                         alpha=opacity,
+                         color='g',
+                         label='Item')
+        plt.title('MAE Values of User & Item Algorithm on Various Similarities')
+        plt.xticks(y_pos + bar_width, ("General","MSD","Cosine","Pearson","K"))
     plt.legend()
     plt.tight_layout()
 
@@ -592,14 +646,14 @@ v,Item_K_a,Item_K_b=extract("ItemK.csv",'fmean')
 # print("MAE  "+str(Item_fmean_b))
 Viz(v,'ItemK')
 '''-------------------------------------------------------------------------------------------------------'''
-UserGen=[]
-ItemGen=[]
+RMSE_UserItemGen=[]
+MAE_UserItemGen=[]
 # Appending the Fold Values to a list to visualize!
-UserGen.append([User_fmean_a,User_MSD_a,User_Cosine_a,User_Pearson_a,User_K_a])
-UserGen.append([User_fmean_b,User_MSD_b,User_Cosine_b,User_Pearson_b,User_K_b])
+RMSE_UserItemGen.append([User_fmean_a,User_MSD_a,User_Cosine_a,User_Pearson_a,User_K_a])
+RMSE_UserItemGen.append([Item_fmean_a,Item_MSD_a,Item_Cosine_a,Item_Pearson_a,Item_K_a])
 
-ItemGen.append([Item_fmean_a,Item_MSD_a,Item_Cosine_a,Item_Pearson_a,Item_K_a])
-ItemGen.append([Item_fmean_b,Item_MSD_b,Item_Cosine_b,Item_Pearson_b,Item_K_b])
+MAE_UserItemGen.append([User_fmean_b,User_MSD_b,User_Cosine_b,User_Pearson_b,User_K_b])
+MAE_UserItemGen.append([Item_fmean_b,Item_MSD_b,Item_Cosine_b,Item_Pearson_b,Item_K_b])
 
-VizCompare(UserGen,'User')
-VizCompare(ItemGen,'Item')
+VizCompare(RMSE_UserItemGen,'RMSE')
+VizCompare(MAE_UserItemGen,'MAE')
