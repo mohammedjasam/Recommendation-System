@@ -82,16 +82,6 @@ def VizCompare(FL,v):
     bar_width = 0.3
     opacity = 0.8
 
-    # #Bars
-    # rects1 = plt.bar(y_pos, a, bar_width,
-    #                  alpha=opacity,
-    #                  color='b',
-    #                  label='RMSE')
-    # rects3 = plt.bar(y_pos + bar_width, b, bar_width,
-    #                  alpha=opacity,
-    #                  color='g',
-    #                  label='MAE')
-
     #Plot Properties
     plt.xlabel('Algorithms')
     plt.ylabel('Value of RMSE & MAE')
@@ -657,3 +647,5 @@ MAE_UserItemGen.append([Item_fmean_b,Item_MSD_b,Item_Cosine_b,Item_Pearson_b,Ite
 
 VizCompare(RMSE_UserItemGen,'RMSE')
 VizCompare(MAE_UserItemGen,'MAE')
+
+################################## End of Using various Similarities ######################################
