@@ -241,69 +241,69 @@ def extract(filename,query):
 
 ################################################    Algorithms    #############################################
 
-
-'''-------------------------------------------------------------------------------------------------------'''
-print("                    Calculating RMSE and MAE of SVD Algorithm")
-print("====================================================================================")
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
-subprocess.call('python SVD.py',shell=True)
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-v,SVD_f1_a,SVD_f1_b=extract("SVD.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-v,SVD_f2_a,SVD_f2_b=extract("SVD.csv",'f2')
-v,SVD_f3_a,SVD_f3_b=extract("SVD.csv",'f3')
-v,SVD_fmean_a,SVD_fmean_b=extract("SVD.csv",'fmean')
-
-
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(SVD_f1_a))
-# print("MAE  "+str(SVD_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(SVD_f2_a))
-# print("MAE  "+str(SVD_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(SVD_f3_a))
-# print("MAE  "+str(SVD_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(SVD_fmean_a))
-# print("MAE  "+str(SVD_fmean_b))
-Viz(v,'SVD')
-'''-------------------------------------------------------------------------------------------------------'''
-
-
-'''-------------------------------------------------------------------------------------------------------'''
-print("                    Calculating RMSE and MAE of PMF Algorithm")
-print("====================================================================================")
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
-subprocess.call('python PMF.py',shell=True)
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-v,PMF_f1_a,PMF_f1_b=extract("PMF.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-v,PMF_f2_a,PMF_f2_b=extract("PMF.csv",'f2')
-v,PMF_f3_a,PMF_f3_b=extract("PMF.csv",'f3')
-v,PMF_fmean_a,PMF_fmean_b=extract("PMF.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(PMF_f1_a))
-# print("MAE  "+str(PMF_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(PMF_f2_a))
-# print("MAE  "+str(PMF_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(PMF_f3_a))
-# print("MAE  "+str(PMF_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(PMF_fmean_a))
-# print("MAE  "+str(PMF_fmean_b))
-Viz(v,'PMF')
-'''-------------------------------------------------------------------------------------------------------'''
+#
+# '''-------------------------------------------------------------------------------------------------------'''
+# print("                    Calculating RMSE and MAE of SVD Algorithm")
+# print("====================================================================================")
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
+# subprocess.call('python SVD.py',shell=True)
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+# v,SVD_f1_a,SVD_f1_b=extract("SVD.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+# v,SVD_f2_a,SVD_f2_b=extract("SVD.csv",'f2')
+# v,SVD_f3_a,SVD_f3_b=extract("SVD.csv",'f3')
+# v,SVD_fmean_a,SVD_fmean_b=extract("SVD.csv",'fmean')
 #
 #
+# # print("\nFold 1 values")
+# # print("=====================")
+# # print("RMSE "+str(SVD_f1_a))
+# # print("MAE  "+str(SVD_f1_b))
+# # print("\nFold 2 values")
+# # print("=====================")
+# # print("RMSE "+str(SVD_f2_a))
+# # print("MAE  "+str(SVD_f2_b))
+# # print("\nFold 3 values")
+# # print("=====================")
+# # print("RMSE "+str(SVD_f3_a))
+# # print("MAE  "+str(SVD_f3_b))
+# # print("\nMean of 3-Fold values")
+# # print("=====================")
+# # print("RMSE "+str(SVD_fmean_a))
+# # print("MAE  "+str(SVD_fmean_b))
+# Viz(v,'SVD')
+# '''-------------------------------------------------------------------------------------------------------'''
+
+#
+# '''-------------------------------------------------------------------------------------------------------'''
+# print("                    Calculating RMSE and MAE of PMF Algorithm")
+# print("====================================================================================")
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
+# subprocess.call('python PMF.py',shell=True)
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+# v,PMF_f1_a,PMF_f1_b=extract("PMF.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+# v,PMF_f2_a,PMF_f2_b=extract("PMF.csv",'f2')
+# v,PMF_f3_a,PMF_f3_b=extract("PMF.csv",'f3')
+# v,PMF_fmean_a,PMF_fmean_b=extract("PMF.csv",'fmean')
+# # print("\nFold 1 values")
+# # print("=====================")
+# # print("RMSE "+str(PMF_f1_a))
+# # print("MAE  "+str(PMF_f1_b))
+# # print("\nFold 2 values")
+# # print("=====================")
+# # print("RMSE "+str(PMF_f2_a))
+# # print("MAE  "+str(PMF_f2_b))
+# # print("\nFold 3 values")
+# # print("=====================")
+# # print("RMSE "+str(PMF_f3_a))
+# # print("MAE  "+str(PMF_f3_b))
+# # print("\nMean of 3-Fold values")
+# # print("=====================")
+# # print("RMSE "+str(PMF_fmean_a))
+# # print("MAE  "+str(PMF_fmean_b))
+# Viz(v,'PMF')
+# '''-------------------------------------------------------------------------------------------------------'''
+# #
+# #
 '''-------------------------------------------------------------------------------------------------------'''
 print("                    Calculating RMSE and MAE of NMF Algorithm")
 print("====================================================================================")
