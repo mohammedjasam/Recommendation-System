@@ -652,5 +652,21 @@ VizCompare(MAE_UserItemGen,'MAE')
 ################################## End of Using various Similarities ######################################
 
 #############################################  Using K #####################################################
-
+# VarV,User_VarK_a,User_VarK_b=[],[],[]
+# print("                    Calculating RMSE and MAE of User K Algorithm")
+# print("====================================================================================")
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
+# subprocess.call('python UserK.py',shell=True)
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/VarK/User/")
+# # v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+# # v,User_f2_a,User_f2_b=extract("User.csv",'f2')
+# # v,User_f3_a,User_f3_b=extract("User.csv",'f3')
+# for i in range(1,21):
+#     v,a,b=extract("UserVarK" + str(i)+ ".csv",'fmean')
+#     VarV.append(v)
+#     User_VarK_a.append(a)
+#     User_VarK_b.append(b)
+# print(VarV)
+# print(User_VarK_a)
+# print(User_VarK_b)
 ############################################## End K #########################################################
