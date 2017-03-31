@@ -783,13 +783,13 @@ for i in range(len(User_VarK_a)):
     y1.append(0)
 for i in range(len(Item_VarK_a)):
     x2.append(i+1)
-    y2.append(0)
+    y2.append(10)
 for i in range(len(User_VarK_b)):
     x3.append(i+1)
     y3.append(0)
 for i in range(len(Item_VarK_b)):
     x4.append(i+1)
-    y4.append(0)
+    y4.append(10)
 
 
 
@@ -804,16 +804,37 @@ ax=fig.add_subplot(111, projection='3d')
 # X1,Y1,Z1 = [1,2,3,4,5,6,7],[0,0,0,0,0,0,0]
 
 
-ax.plot_wireframe(x1,y1,User_VarK_a)
-ax.plot_wireframe(x2,y2,Item_VarK_a)
-ax.plot_wireframe(x3,y3,User_VarK_b)
-ax.plot_wireframe(x4,y4,Item_VarK_b)
+ax.plot_wireframe(x1,y1,User_VarK_a, label='User Algo RMSE for Varying K',linestyle='--', color='red')
+ax.plot_wireframe(x2,y2,Item_VarK_a,label='User Algo RMSE for Varying K')
+ax.plot_wireframe(x3,y3,User_VarK_b,label='User Algo RMSE for Varying K', color='red', linestyle='--')
+ax.plot_wireframe(x4,y4,Item_VarK_b,label='User Algo RMSE for Varying K')
 
 # ax.plot_wireframe(X1,Y1,Z1)
 
 
-plt.show()
+# plt.show()
 
+# from mpl_toolkits.mplot3d import Axes3D
+# import matplotlib.pyplot as plt
+# import numpy as np
+#
+# # fig = plt.figure()
+# # ax = fig.add_subplot(111, projection='3d')
+# for c, z in zip(['r', 'g'], [20,30]):
+#     xs = np.array(Item_VarK_a)
+#     ys = np.array(Item_VarK_b)
+#
+#     # You can provide either a single color or an array. To demonstrate this,
+#     # the first bar of each set will be colored cyan.
+#     cs = [c] * len(xs)
+#     cs[0] = 'c'
+#     ax.bar(xs, ys, zs=z, zdir='y', color=cs, alpha=0.8)
+# # print(xs,ys)
+# ax.set_xlabel('X')
+# ax.set_ylabel('Y')
+# ax.set_zlabel('Z')
+
+plt.show()
 
 
 # import numpy as np
