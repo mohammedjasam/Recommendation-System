@@ -232,8 +232,6 @@ def extract(filename,query):
 
 ################################################    Algorithms    #############################################
 
-
-'''-------------------------------------------------------------------------------------------------------'''
 print("                    Calculating RMSE and MAE of SVD Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
@@ -243,29 +241,11 @@ v,SVD_f1_a,SVD_f1_b=extract("SVD.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FO
 v,SVD_f2_a,SVD_f2_b=extract("SVD.csv",'f2')
 v,SVD_f3_a,SVD_f3_b=extract("SVD.csv",'f3')
 v,SVD_fmean_a,SVD_fmean_b=extract("SVD.csv",'fmean')
-
-
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(SVD_f1_a))
-# print("MAE  "+str(SVD_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(SVD_f2_a))
-# print("MAE  "+str(SVD_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(SVD_f3_a))
-# print("MAE  "+str(SVD_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(SVD_fmean_a))
-# print("MAE  "+str(SVD_fmean_b))
 Viz(v,'SVD')
-'''-------------------------------------------------------------------------------------------------------'''
 
 
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of PMF Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
@@ -275,27 +255,10 @@ v,PMF_f1_a,PMF_f1_b=extract("PMF.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FO
 v,PMF_f2_a,PMF_f2_b=extract("PMF.csv",'f2')
 v,PMF_f3_a,PMF_f3_b=extract("PMF.csv",'f3')
 v,PMF_fmean_a,PMF_fmean_b=extract("PMF.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(PMF_f1_a))
-# print("MAE  "+str(PMF_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(PMF_f2_a))
-# print("MAE  "+str(PMF_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(PMF_f3_a))
-# print("MAE  "+str(PMF_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(PMF_fmean_a))
-# print("MAE  "+str(PMF_fmean_b))
 Viz(v,'PMF')
-'''-------------------------------------------------------------------------------------------------------'''
-#
-#
-'''-------------------------------------------------------------------------------------------------------'''
+
+
+
 print("                    Calculating RMSE and MAE of NMF Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
@@ -305,27 +268,10 @@ v,NMF_f1_a,NMF_f1_b=extract("NMF.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FO
 v,NMF_f2_a,NMF_f2_b=extract("NMF.csv",'f2')
 v,NMF_f3_a,NMF_f3_b=extract("NMF.csv",'f3')
 v,NMF_fmean_a,NMF_fmean_b=extract("NMF.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(NMF_f1_a))
-# print("MAE  "+str(NMF_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(NMF_f2_a))
-# print("MAE  "+str(NMF_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(NMF_f3_a))
-# print("MAE  "+str(NMF_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(NMF_fmean_a))
-# print("MAE  "+str(NMF_fmean_b))
 Viz(v,'NMF')
-'''-------------------------------------------------------------------------------------------------------'''
-#
-#
-'''-------------------------------------------------------------------------------------------------------'''
+
+
+
 print("                    Calculating RMSE and MAE of User Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
@@ -335,27 +281,11 @@ v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2
 v,User_f2_a,User_f2_b=extract("User.csv",'f2')
 v,User_f3_a,User_f3_b=extract("User.csv",'f3')
 v,User_fmean_a,User_fmean_b=extract("User.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(User_f1_a))
-# print("MAE  "+str(User_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(User_f2_a))
-# print("MAE  "+str(User_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(User_f3_a))
-# print("MAE  "+str(User_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(User_fmean_a))
-# print("MAE  "+str(User_fmean_b))
 Viz(v,'User')
-'''-------------------------------------------------------------------------------------------------------'''
 
 
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of Item Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
@@ -365,24 +295,8 @@ v,Item_f1_a,Item_f1_b=extract("Item.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2
 v,Item_f2_a,Item_f2_b=extract("Item.csv",'f2')
 v,Item_f3_a,Item_f3_b=extract("Item.csv",'f3')
 v,Item_fmean_a,Item_fmean_b=extract("Item.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(Item_f1_a))
-# print("MAE  "+str(Item_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(Item_f2_a))
-# print("MAE  "+str(Item_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(Item_f3_a))
-# print("MAE  "+str(Item_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(Item_fmean_a))
-# print("MAE  "+str(Item_fmean_b))
 Viz(v,'Item')
-'''-------------------------------------------------------------------------------------------------------'''
+
 #################################################### End of Algorithm ########################################
 
 ############################################### Plotting Individual Folds #######################################
@@ -411,215 +325,80 @@ VizCompare(FoldMeans,'fmean')
 
 #################################################  Collaborative Algorithms  ####################################
 
-'''-------------------------------------------------------------------------------------------------------'''
+
 print("                    Calculating RMSE and MAE of User MSD Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python UserMSD.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,User_f2_a,User_f2_b=extract("User.csv",'f2')
-# v,User_f3_a,User_f3_b=extract("User.csv",'f3')
 v,User_MSD_a,User_MSD_b=extract("UserMSD.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(User_f1_a))
-# print("MAE  "+str(User_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(User_f2_a))
-# print("MAE  "+str(User_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(User_f3_a))
-# print("MAE  "+str(User_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(User_MSD_a))
-# print("MAE  "+str(User_MSD_b))
 Viz(v,'UserMSD')
-'''-------------------------------------------------------------------------------------------------------'''
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of User Cosine Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python UserCosine.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,User_f2_a,User_f2_b=extract("User.csv",'f2')
-# v,User_f3_a,User_f3_b=extract("User.csv",'f3')
 v,User_Cosine_a,User_Cosine_b=extract("UserCosine.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(User_f1_a))
-# print("MAE  "+str(User_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(User_f2_a))
-# print("MAE  "+str(User_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(User_f3_a))
-# print("MAE  "+str(User_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(User_Cosine_a))
-# print("MAE  "+str(User_Cosine_b))
 Viz(v,'UserCosine')
-'''-------------------------------------------------------------------------------------------------------'''
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of User Pearson Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python UserPearson.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,User_f2_a,User_f2_b=extract("User.csv",'f2')
-# v,User_f3_a,User_f3_b=extract("User.csv",'f3')
 v,User_Pearson_a,User_Pearson_b=extract("UserPearson.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(User_f1_a))
-# print("MAE  "+str(User_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(User_f2_a))
-# print("MAE  "+str(User_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(User_f3_a))
-# print("MAE  "+str(User_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(User_Pearson_a))
-# print("MAE  "+str(User_Pearson_b))
 Viz(v,'UserPearson')
-'''-------------------------------------------------------------------------------------------------------'''
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of User K Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python UserK.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,User_f2_a,User_f2_b=extract("User.csv",'f2')
-# v,User_f3_a,User_f3_b=extract("User.csv",'f3')
 v,User_K_a,User_K_b=extract("UserK.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(User_f1_a))
-# print("MAE  "+str(User_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(User_f2_a))
-# print("MAE  "+str(User_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(User_f3_a))
-# print("MAE  "+str(User_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(User_K_a))
-# print("MAE  "+str(User_K_b))
 Viz(v,'UserK')
-'''-------------------------------------------------------------------------------------------------------'''
 
 
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of Item MSD Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python ItemMSD.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,Item_f1_a,Item_f1_b=extract("Item.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,Item_f2_a,Item_f2_b=extract("Item.csv",'f2')
-# v,Item_f3_a,Item_f3_b=extract("Item.csv",'f3')
 v,Item_MSD_a,Item_MSD_b=extract("ItemMSD.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(Item_f1_a))
-# print("MAE  "+str(Item_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(Item_f2_a))
-# print("MAE  "+str(Item_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(Item_f3_a))
-# print("MAE  "+str(Item_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(Item_fmean_a))
-# print("MAE  "+str(Item_fmean_b))
 Viz(v,'ItemMSD')
-'''-------------------------------------------------------------------------------------------------------'''
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of Item Cosine Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python ItemCosine.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,Item_f1_a,Item_f1_b=extract("Item.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,Item_f2_a,Item_f2_b=extract("Item.csv",'f2')
-# v,Item_f3_a,Item_f3_b=extract("Item.csv",'f3')
 v,Item_Cosine_a,Item_Cosine_b=extract("ItemCosine.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(Item_f1_a))
-# print("MAE  "+str(Item_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(Item_f2_a))
-# print("MAE  "+str(Item_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(Item_f3_a))
-# print("MAE  "+str(Item_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(Item_fmean_a))
-# print("MAE  "+str(Item_fmean_b))
 Viz(v,'ItemCosine')
-'''-------------------------------------------------------------------------------------------------------'''
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of Item Pearson Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python ItemPearson.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,Item_f1_a,Item_f1_b=extract("Item.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,Item_f2_a,Item_f2_b=extract("Item.csv",'f2')
-# v,Item_f3_a,Item_f3_b=extract("Item.csv",'f3')
 v,Item_Pearson_a,Item_Pearson_b=extract("ItemPearson.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(Item_f1_a))
-# print("MAE  "+str(Item_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(Item_f2_a))
-# print("MAE  "+str(Item_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(Item_f3_a))
-# print("MAE  "+str(Item_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(Item_fmean_a))
-# print("MAE  "+str(Item_fmean_b))
 Viz(v,'ItemPearson')
-'''-------------------------------------------------------------------------------------------------------'''
-'''-------------------------------------------------------------------------------------------------------'''
+
+
 print("                    Calculating RMSE and MAE of Item K Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
 subprocess.call('python ItemK.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-
 v,Item_K_a,Item_K_b=extract("ItemK.csv",'fmean')
-
 Viz(v,'ItemK')
-'''-------------------------------------------------------------------------------------------------------'''
+
 RMSE_UserItemGen=[]
 MAE_UserItemGen=[]
 # Appending the Fold Values to a list to visualize!
