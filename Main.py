@@ -68,7 +68,7 @@ def Viz(l,v):
     plt.tight_layout()
 
     #Displaying the Plot
-    plt.show
+    plt.show()
 
 ##################################################### VIZ COMPARE ######################################################
 def VizCompare(FL,v):
