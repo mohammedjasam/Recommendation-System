@@ -659,41 +659,41 @@ def extract(filename,query):
 # VizCompare(MAE_UserItemGen,'MAE')
 '''#######################################################################################################'''
 '''-------------------------------------------------------------------------------------------------------'''
-print("                    Calculating RMSE and MAE of User K Algorithm")
-print("====================================================================================")
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
-subprocess.call('python UserK.py',shell=True)
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-# v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
-# v,User_f2_a,User_f2_b=extract("User.csv",'f2')
-# v,User_f3_a,User_f3_b=extract("User.csv",'f3')
-v,User_K_a,User_K_b=extract("UserK.csv",'fmean')
-# print("\nFold 1 values")
-# print("=====================")
-# print("RMSE "+str(User_f1_a))
-# print("MAE  "+str(User_f1_b))
-# print("\nFold 2 values")
-# print("=====================")
-# print("RMSE "+str(User_f2_a))
-# print("MAE  "+str(User_f2_b))
-# print("\nFold 3 values")
-# print("=====================")
-# print("RMSE "+str(User_f3_a))
-# print("MAE  "+str(User_f3_b))
-# print("\nMean of 3-Fold values")
-# print("=====================")
-# print("RMSE "+str(User_K_a))
-# print("MAE  "+str(User_K_b))
-Viz(v,'UserK')
+# print("                    Calculating RMSE and MAE of User K Algorithm")
+# print("====================================================================================")
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
+# subprocess.call('python UserK.py',shell=True)
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+# # v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
+# # v,User_f2_a,User_f2_b=extract("User.csv",'f2')
+# # v,User_f3_a,User_f3_b=extract("User.csv",'f3')
+# v,User_K_a,User_K_b=extract("UserK.csv",'fmean')
+# # print("\nFold 1 values")
+# # print("=====================")
+# # print("RMSE "+str(User_f1_a))
+# # print("MAE  "+str(User_f1_b))
+# # print("\nFold 2 values")
+# # print("=====================")
+# # print("RMSE "+str(User_f2_a))
+# # print("MAE  "+str(User_f2_b))
+# # print("\nFold 3 values")
+# # print("=====================")
+# # print("RMSE "+str(User_f3_a))
+# # print("MAE  "+str(User_f3_b))
+# # print("\nMean of 3-Fold values")
+# # print("=====================")
+# # print("RMSE "+str(User_K_a))
+# # print("MAE  "+str(User_K_b))
+# Viz(v,'UserK')
 
 RMSE_UserItemGen_VarK=[]
 MAE_UserItemGen_VarK=[]
 VarV,Item_VarK_a,Item_VarK_b=[],[],[]
-'''-------------------------------------------------------------------------------------------------------'''
+# '''-------------------------------------------------------------------------------------------------------'''
 print("                    Calculating RMSE and MAE of Item K Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
-subprocess.call('python ItemK.py',shell=True)
+subprocess.call('python ItemVarK.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/VarK/Item/")
 # v,Item_f1_a,Item_f1_b=extract("Item.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
 # v,Item_f2_a,Item_f2_b=extract("Item.csv",'f2')
@@ -730,7 +730,7 @@ VarV,User_VarK_a,User_VarK_b=[],[],[]
 print("                    Calculating RMSE and MAE of User K Algorithm")
 print("====================================================================================")
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Algorithms/")
-subprocess.call('python UserK.py',shell=True)
+subprocess.call('python UserVarK.py',shell=True)
 os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/VarK/User/")
 # v,User_f1_a,User_f1_b=extract("User.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
 # v,User_f2_a,User_f2_b=extract("User.csv",'f2')
@@ -747,9 +747,89 @@ for i in range(1,20):
 #     Viz(VarV[i],'UserK')
 
 RMSE_UserItemGen_VarK.append(User_VarK_a)
-RMSE_UserItemGen_VarK.append(Item_VarK_a)
+# RMSE_UserItemGen_VarK.append(Item_VarK_a)
 
 MAE_UserItemGen_VarK.append(User_VarK_b)
 MAE_UserItemGen_VarK.append(Item_VarK_b)
-VizCompare(RMSE_UserItemGen_VarK,'RMSE')
+
+# print(RMSE_UserItemGen_VarK)
+# import matplotlib as plt
+import matplotlib.pylab as plt
+import seaborn as sns
+
+# # import pyplot as plt
+# # User_VarK_a,Item_VarK_a,User_VarK_b,Item_VarK_b = np.array(User_VarK_a),np.array(Item_VarK_a),np.array(User_VarK_b),np.array(Item_VarK_b)
+#
+# plt.figure(figsize=(10,6))
+# # plt.plot(range(1,20),User_VarK_a, color = 'red',linestyle = 'dashed', marker = 'o', markerfacecolor='red',markersize=10)
+# # plt.plot(range(1,20),Item_VarK_a, color = 'blue',linestyle = 'dashed', marker = 'o', markerfacecolor='blue',markersize=10)
+# # plt.plot(range(1,20),User_VarK_b, color = 'green',linestyle = 'dashed', marker = 'o', markerfacecolor='green',markersize=10)
+# # plt.plot(range(1,20),Item_VarK_b, color = 'yellow',linestyle = 'dashed', marker = 'o', markerfacecolor='yellow',markersize=10)
+# # t = linspace(0,2*math.pi,400)
+#
+# plt.plot(User_VarK_a)
+# plt.plot(User_VarK_b)
+# plt.plot(Item_VarK_a)
+# plt.plot(Item_VarK_b)
+#
+#
+# plt.title('Error Rate vs. Value of K')
+# plt.xlabel('Value of K')
+# plt.ylabel('Error Rate')
+# plt.show()
+x1,x2,x3,x4,y1,y2,y3,y4=[],[],[],[],[],[],[],[]
+for i in range(len(User_VarK_a)):
+    x1.append(i+1)
+    y1.append(0)
+for i in range(len(Item_VarK_a)):
+    x2.append(i+1)
+    y2.append(0)
+for i in range(len(User_VarK_b)):
+    x3.append(i+1)
+    y3.append(0)
+for i in range(len(Item_VarK_b)):
+    x4.append(i+1)
+    y4.append(0)
+
+
+
+from mpl_toolkits.mplot3d import axes3d
+import matplotlib.pyplot as plt
+
+
+fig=plt.figure()
+ax=fig.add_subplot(111, projection='3d')
+
+# X,Y,Z = [1,2,3,4,5,6,7],[0,0,0,0,0,0,0]
+# X1,Y1,Z1 = [1,2,3,4,5,6,7],[0,0,0,0,0,0,0]
+
+
+ax.plot_wireframe(x1,y1,User_VarK_a)
+ax.plot_wireframe(x2,y2,Item_VarK_a)
+ax.plot_wireframe(x3,y3,User_VarK_b)
+ax.plot_wireframe(x4,y4,Item_VarK_b)
+
+# ax.plot_wireframe(X1,Y1,Z1)
+
+
+plt.show()
+
+
+
+# import numpy as np
+#
+# from numpy import *
+# import math
+# import matplotlib.pyplot as plt
+#
+# t = linspace(0,2*math.pi,400)
+# # a = sin(t)
+# # b = cos(t)
+# # c = a + b
+#
+# a1,b1,c1,d1 = np.array(User_VarK_a),np.array(Item_VarK_a),np.array(User_VarK_b),np.array(Item_VarK_b)
+# print(a1)
+# plt.plot(t,a1,t,b1,t,c1)
+# plt.show()
+# VizCompare(RMSE_UserItemGen_VarK,'RMSE')
 ############################################## End K #########################################################

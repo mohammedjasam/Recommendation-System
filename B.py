@@ -1,3 +1,6 @@
+import os
+import subprocess
+
 RMSE_UserItemGen_VarK=[]
 MAE_UserItemGen_VarK=[]
 Item_VarK_a_list=[]
