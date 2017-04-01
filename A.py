@@ -7,7 +7,7 @@ import subprocess
 import csv
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
-# print(dir_path)
+print(dir_path)
 dir_pathAlgo=dir_path+"\Algorithms\ "
 dir_pathOP=dir_path+"\Outputs\ "
 l=[]
@@ -238,7 +238,7 @@ def extract(filename,query):
 print("                    Calculating RMSE and MAE of SVD Algorithm")
 print("====================================================================================")
 os.chdir(dir_pathAlgo)
-subprocess.call('python SVD.py',shell=True)
+subprocess.call('python mj.py',shell=True)
 os.chdir(dir_pathOP)
 v,SVD_f1_a,SVD_f1_b=extract("SVD.csv",'f1')    ### Parameters: f1=FOLD1 ;  f2=FOLD2  ;  f3=FOLD3  ;  fmean=Mean of 3-FOLDS
 v,SVD_f2_a,SVD_f2_b=extract("SVD.csv",'f2')
