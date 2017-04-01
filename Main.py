@@ -6,8 +6,9 @@ import numpy as np
 import subprocess
 import csv
 import os
+
+# resolves the directory issues on multiple systems!
 dir_path = os.path.dirname(os.path.realpath(__file__))
-# print(dir_path)
 dir_pathAlgo=dir_path+"\Algorithms\ "
 dir_pathOP=dir_path+"\Outputs\ "
 l=[]
@@ -146,7 +147,7 @@ def VizCompare(FL,v):
         rects3 = plt.bar(y_pos + bar_width, b, bar_width,
                          alpha=opacity,
                          color='g',
-                         label='IItem')
+                         label='Item')
         plt.title('RMSE Values of User & Item Algorithm on Various Similarities')
         plt.xticks(y_pos + bar_width, ("General","MSD","Cosine","Pearson","K"))
     elif v=='MAE':
@@ -166,6 +167,8 @@ def VizCompare(FL,v):
 
     #Displaying Plot
     plt.show()
+################################################# End of Visualization ##################################################
+
 
 ################################################# Main Body ##################################################
 
@@ -227,7 +230,7 @@ def extract(filename,query):
                 MAE=xa[x][3]
         del l[:]
         return v,RMSE, MAE
-############################################## End of Visualization ##########################################
+############################################## End of Main ##########################################
 
         ### Call the function name!!! ###
 ### The function returns RMSE and MAE Values!! ###
@@ -417,7 +420,6 @@ VizCompare(MAE_UserItemGen,'MAE')
 ################################## End of Using various Similarities ######################################
 
 #############################################  Using K #####################################################
-# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/")
 os.chdir(dir_path)
 subprocess.call('python VariableKUserAndItem.py', shell=True)
 ############################################## End K #########################################################
