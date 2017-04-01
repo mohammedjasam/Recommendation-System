@@ -44,14 +44,15 @@ algo = SVD(biased=False)
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
 
-def printPMF():
-    pt(perf)
-printPMF()
+# def printPMF():
+#     pt(perf)
 # printPMF()
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-
-with open('PMF.csv','w') as fo:
-    print_perf(perf,fo)
+# # printPMF()
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+#
+# with open('PMF.csv','w') as fo:
+#     print_perf(perf,fo)
+print(perf)
 
 
 #Visualization

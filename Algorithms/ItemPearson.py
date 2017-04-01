@@ -54,13 +54,15 @@ algo = KNNBasic(sim_options = {'name':'pearson','user_based': False })
 
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-def printItem():
-    print()
-    pt(perf)
-printItem()
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+# def printItem():
+#     print()
+#     pt(perf)
+# printItem()
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+#
+# with open('ItemPearson.csv','w') as fo:
+#     print_perf(perf,fo)
 
-with open('ItemPearson.csv','w') as fo:
-    print_perf(perf,fo)
+print(perf)
 
 #Visualization

@@ -45,13 +45,13 @@ algo = NMF()
 
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-def printNMF():
-    pt(perf)
-printNMF()
-
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-
-with open('NMF.csv','w') as fo:
-    print_perf(perf,fo)
-
+# def printNMF():
+#     pt(perf)
+# printNMF()
+#
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+#
+# with open('NMF.csv','w') as fo:
+#     print_perf(perf,fo)
+print(perf)
 #Visualization

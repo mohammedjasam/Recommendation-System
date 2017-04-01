@@ -54,11 +54,12 @@ for i in range(1,21):
 
 
     perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-    def printUser():
-        print()
-        pt(perf)
-    printUser()
-    os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/VarK/User/")
-
-    with open('UserVarK'+str(i)+'.csv','w') as fo:
-        print_perf(perf,fo)
+    # def printUser():
+    #     print()
+    #     pt(perf)
+    # printUser()
+    # os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/VarK/User/")
+    #
+    # with open('UserVarK'+str(i)+'.csv','w') as fo:
+    #     print_perf(perf,fo)
+    print(perf)

@@ -53,11 +53,12 @@ algo = KNNBasic(sim_options = {'name':'MSD','user_based': True })
 
 
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
-def printUser():
-    print()
-    pt(perf)
-printUser()
-os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
-
-with open('UserMSD.csv','w') as fo:
-    print_perf(perf,fo)
+# def printUser():
+#     print()
+#     pt(perf)
+# printUser()
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+#
+# with open('UserMSD.csv','w') as fo:
+#     print_perf(perf,fo)
+print(perf)

@@ -54,6 +54,14 @@ algo = KNNBasic(sim_options = {'name':'cosine','user_based': False })
 
 #Printing the result
 perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
+# def printItem():
+#     print()
+#     pt(perf)
+# printItem()
+# os.chdir("C:/Users/Stark/Desktop/Programming/Everythin_else!/Work/Current/Recommender-System/Outputs/")
+#
+# with open('ItemCosine.csv','w') as fo:
+#     print_perf(perf,fo)
 print_perf(perf)
 
 #Visualization
