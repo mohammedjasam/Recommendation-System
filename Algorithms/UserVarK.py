@@ -65,4 +65,4 @@ for i in range(1,21):
     #
     # with open('UserVarK'+str(i)+'.csv','w') as fo:
     #     print_perf(perf,fo)
-    print(perf)
+    print_perf(perf)

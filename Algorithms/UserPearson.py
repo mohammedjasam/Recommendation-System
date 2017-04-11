@@ -64,4 +64,4 @@ perf = evaluate(algo, data, measures=['RMSE', 'MAE'])
 #
 # with open('UserPearson.csv','w') as fo:
 #     print_perf(perf,fo)
-print(perf)
+print_perf(perf)
